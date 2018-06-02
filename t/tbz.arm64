@@ -10,6 +10,6 @@ tbz x0, 0x20, 0xffff8004
 tbnz x0, 0x20, 0x100004008
 tbnz x0, 0x20, 0xffff800c
 ';
-BROKEN=true;
+BROKEN=1;
 
 run_test;
