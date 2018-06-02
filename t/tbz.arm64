@@ -1,0 +1,15 @@
+#!/bin/sh
+for a in . .. ../.. ; do [ -e $a/tests.sh ] && . $a/tests.sh ; done
+
+NAME='p';
+FILE='../bins/other/tbz.arm64';
+ARGS='-aarm -b64 -m 0x100000000';
+CMDS='pi 4';
+EXPECT='tbz x0, 0x20, 0x100004000
+tbz x0, 0x20, 0xffff8004
+tbnz x0, 0x20, 0x100004008
+tbnz x0, 0x20, 0xffff800c
+';
+BROKEN=true;
+
+run_test;
